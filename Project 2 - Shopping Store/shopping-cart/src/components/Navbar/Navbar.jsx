@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import { NavLink } from 'react-router';
 
 const Navbar = () => {
   return (
@@ -24,7 +25,9 @@ const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button component={NavLink} to="/products" color="inherit">Products</Button>
+          <Button component={NavLink} to="/login" color="inherit">Login</Button>
+          <Button component={NavLink} to="/cart" color="inherit">Cart</Button>
         </Toolbar>
       </AppBar>
     </Box>

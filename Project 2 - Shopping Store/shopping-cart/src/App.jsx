@@ -4,29 +4,24 @@ import Login from './pages/Login'
 import AllProducts from './pages/AllProducts'
 import Cart from './pages/Cart'
 import Register from './pages/Register'
+import Layout from './components/Layout/Layout'
+import ShowProduct from './pages/ShowProduct'
 
 
 function App() {
 
   return (
-    <div>
+      <Layout>
 
-      <nav>
-        <ul>
-          <li><NavLink to="/register">Register_page</NavLink></li>
-          <li><NavLink to="/login">Login_page</NavLink></li>
-          <li><NavLink to="/products">Products_page</NavLink></li>
-          <li><NavLink to="/cart">Cart_page</NavLink></li>
-        </ul>
-      </nav>
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/products' element={<AllProducts />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/products/:productId' element={<ShowProduct />} />
+        </Routes>
 
-      <Routes>
-        <Route path='/login' element={<Login />} />
-        <Route path='/products' element={<AllProducts />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/register' element={<Register />} />
-      </Routes>
-    </div>
+      </Layout>
   )
 }
 
